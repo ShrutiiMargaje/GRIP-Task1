@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400&display=swap" rel="stylesheet">
+    <title>Customer Details</title>
+</head>
+<body>
+    <div class="navigation_bar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo" height="60px" width="60px">
+            <h1>Sparks Foundation Bank</h1>
+        </div>
+        <div class="pages">
+            <a href="index.html">Home</a>
+            <a class="active" href="details.html">Customer Details</a>
+            <a href="transaction.html">Transaction</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <h2>View Complete Customer Details Here.....</h2>
+    <!-- Modal send money -->
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Transfer Money</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="input-group mb-3">
+                        <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@email.com</span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"></span>
+                        </div>
+                        <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                            aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><strong>Cancle</strong></button>
+                <button style="background-color:black;" type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal"><strong>Send Money</strong></button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ol id="transaction-history-body">
+
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button style="background-color:black;" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+    <div class="table-responsive">
+        <table class="table  table-bordered">
+            <thead class="table-head">
+                <tr class="t-head">
+                    <th scope="col"><strong>Sr. No.</strong></th>
+                    <th scope="col"><strong>Name</strong></th>
+                    <th scope="col"><strong>Mail Id</strong></th>
+                    <th scope="col"><strong>Bank Balance(in Rs)</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="t-first">
+                    <td scope="row">1</td>
+                    <td>Aditi</td>
+                    <td>aditi@email.com</td>
+                    <td>
+                        <p id="aditiBankBalance">10000</p>
+                    </td>
+                </tr>
+                <tr class="t-second">
+                    <td scope="row">2</td>
+                    <td>Bhavesh</td>
+                    <td>bhavesh@email.com</td>
+                    <td>
+                        <p id="bhaveshBankBalance">90000</p>
+                    </td>
+                </tr>
+                <tr class="t-first">
+                    <td scope="row">3</td>
+                    <td>Chetan</td>
+                    <td>chetan@email.com</td>
+                    <td>
+                        <p id="chetanBankBalance">20000</p>
+                    </td>
+                </tr>
+                <tr class="t-second">
+                    <td scope="row">4</td>
+                    <td>Danny</td>
+                    <td>danny@email.com</td>
+                    <td>
+                        <p id="dannyBankBalance">80000</p>
+                    </td>
+                </tr>
+                <tr class="t-first">
+                    <td scope="row">5</td>
+                    <td>Esha</td>
+                    <td>esha@email.com</td>
+                    <td>
+                        <p id="eshaBankBalance">30000</p>
+                    </td>
+                </tr>
+                <tr class="t-second">
+                    <td scope="row">6</td>
+                    <td>Fareen</td>
+                    <td>fareen@email.com</td>
+                    <td>
+                        <p id="fareenBankBalance">70000</p>
+                    </td>
+                </tr>
+                <tr class="t-first">
+                    <td>7</td>
+                    <td>Gautam</td>
+                    <td>gautam@email.com</td>
+                    <td>
+                        <p id="gautamBankBalance">40000</p>
+                    </td>
+                </tr>
+                <tr class="t-second">
+                    <td scope="row">8</td>
+                    <td>Harry</td>
+                    <td>harry@email.com</td>
+                    <td>
+                        <p id="harryBankBalance">60000</p>
+                    </td>
+                </tr>
+                <tr class="t-first">
+                    <td scope="row">9</td>
+                    <td>Ishika</td>
+                    <td>ishika@email.com</td>
+                    <td>
+                        <p id="ishikaBankBalance">50000</p>
+                    </td>
+                </tr>
+                <tr class="t-second">
+                    <td scope="row">10</td>
+                    <td>Janhvi</td>
+                    <td>janhvi@email.com</td>
+                    <td>
+                        <p id="janhviBankBalance">43000</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <div class="footer">
+      <ul>
+          <li><img src="images/instagram logo.png" alt="Instagram" height="30px" width="30px"></li>
+          <li><img src="images/facebook logo.png" alt="Facebook" height="30px" width="30px"></li>
+          <li><img src="images/linkedin logo.png" alt="LinkedIn" height="30px" width="30px"></li>
+          <li><img src="images/twitter logo.png" alt="Twitter" height="30px" width="30px"></li>
+          <li><img src="images/youtube logo.png" alt="YouTube" height="30px" width="30px"></li>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+   
+</body>
+</html>
+
+
+

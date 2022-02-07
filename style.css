@@ -1,0 +1,99 @@
+/*#072227 black
+#35858B bark blue
+#4FBDBA blue
+#AEFEFF light blue*/
+
+*{
+    margin: 0;
+    padding:0 ;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+
+/*Navigation Bar*/
+.logo{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    padding:20px ;
+}
+.pages{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.pages a{
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top:20px ;
+    border-radius: 20% 0;
+    font-size: 1.2em;
+    color: aliceblue;
+}
+.pages a:hover {
+    background-color: rgb(148, 148, 148);
+    color: black;
+}
+.pages a.active {
+    background-color:#35858B ;
+    color: white;
+}
+
+/*Main content*/
+
+.content{
+    text-align: center;
+}
+.content p{
+    font-size: 1.2em;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 30px;
+}
+.content button{
+    background-color: #35858B;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 10px;
+    cursor: pointer;
+    border-radius: 20% 0;
+}
+.content button:hover {
+    background-color: rgb(148, 148, 148);
+    color: black;
+}
+  
+.content button.active {
+    background-color:#35858B ;
+    color: white;
+}
+
+/*footer*/
+.footer{
+    background-color: black;
+    text-align: center;
+}
+.footer li{
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-top:30px ;
+    border-radius: 5%;
+}
+.footer img:hover {
+    background-color:black;
+    color:black;
+    padding: 10px 10px;
+  }
+  
+  
